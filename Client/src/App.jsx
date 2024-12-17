@@ -1,9 +1,15 @@
-import { Button } from "@/components/ui/button"
+import { Routes, Route } from "react-router-dom";
+import AuthLayout from "./components/ui/auth/layout";
 
-export default function Home() {
+
+const App = () => {
   return (
-    <div>
-      <Button>Click me</Button>
-    </div>
+     <div className="flex flex-col overflow-hidden bg-white">
+       <Routes>
+        <Route path="/auth" element={<AuthLayout/>}/>
+       </Routes>
+     </div>
   )
 }
+
+export default App

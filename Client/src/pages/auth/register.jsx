@@ -1,13 +1,14 @@
 import CommonForm from "@/components/common/form";
-import { loginFormControls } from "@/config";
+import { registerFormControls } from "@/config";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const initialState = {
+  username: "",
   email: "",
   password: "",
 };
-function AuthLogin() {
+function AuthRegister() {
   const [formData, setFormData] = useState(initialState);
   const onSubmit = (event) => {
     event.preventDefault();
@@ -18,28 +19,28 @@ function AuthLogin() {
       <div className="mx-auto w-full max-w-md">
         <div className="text-center">
           <h1 className="text-3xl font-bold tracking-tight text-foreground">
-            Login to your account
+            Create new account
           </h1>
           <p className="mt-2">
-            Don't have an account{" "}
+            Already have an account{" "}
             <Link
               className="font-medium ml-2 text-primary hover:underline"
-              to="/auth/register"
+              to="/auth/login"
             >
-              Sign Up
+              Login
             </Link>
           </p>
         </div>
         <CommonForm
-          formControls={loginFormControls}
+          formControls={registerFormControls}
           formData={formData}
           setFormData={setFormData}
           onSubmit={onSubmit}
-          buttonText={"Login"}
+          buttonText={"Sign Up"}
         />
       </div>
     </>
   );
 }
 
-export default AuthLogin;
+export default AuthRegister;

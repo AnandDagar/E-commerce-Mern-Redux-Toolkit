@@ -1,9 +1,9 @@
-import React from 'react'
+import { Button } from "@/components/ui/button"
 
-const App = () => {
+export default function Home() {
   return (
-    <div>App</div>
+    <div>
+      <Button>Click me</Button>
+    </div>
   )
 }
-
-export default Appqd
